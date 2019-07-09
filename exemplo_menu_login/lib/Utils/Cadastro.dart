@@ -1,8 +1,7 @@
 class Cadastrar {
-  const Cadastrar({this.nome, this.email, this.cargo, this.detalhe});
-  final String nome;
+  const Cadastrar({ this.email,});
+ 
   final String email;
-  final String cargo;
-  final String detalhe;
+
 }
 

@@ -1,3 +1,5 @@
+import 'package:exemplo_menu_login/Utils/Cadastro.dart';
+import 'package:exemplo_menu_login/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -83,12 +85,23 @@ class _MyHomePageState extends State<MyHomePage> {
     if (email == emailControll.text && senha == senhaControll.text) {
       final snackBar = SnackBar(content: Text('Autenticado com sucesso'));
       _scaffoldKey.currentState.showSnackBar(snackBar);
+
+      Cadastrar cadastro = new Cadastrar(
+        email: emailControll.text,
+      );
+
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Detalhe(cadastro),
+              settings: RouteSettings(arguments: cadastro)));
     } else {
       final snackBar = SnackBar(content: Text('Erro na autenticação'));
       _scaffoldKey.currentState.showSnackBar(snackBar);
     }
   }
-@override
+
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -107,4 +120,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
