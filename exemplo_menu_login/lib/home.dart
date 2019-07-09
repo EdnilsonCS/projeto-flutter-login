@@ -1,5 +1,5 @@
-
 import 'package:exemplo_menu_login/Utils/Login.dart';
+import 'package:exemplo_menu_login/cadastro.dart';
 import 'package:exemplo_menu_login/main.dart';
 import 'package:flutter/material.dart';
 
@@ -62,8 +62,10 @@ class _DetalheState extends State<Detalhe> {
                 size: 30.0,
               ),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Cadastro()),
+                );
               },
             ),
             ListTile(

@@ -1,13 +1,13 @@
 import 'package:exemplo_menu_login/Utils/CadastrarDetalhe.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
+
 
 class Cadastro extends StatefulWidget {
   @override
-  _DetalheState createState() => _DetalheState();
+  _CadastroState createState() => _CadastroState();
 }
 
-class _DetalheState extends State<Cadastro> {
+class _CadastroState extends State<Cadastro> {
   final nomeControll = TextEditingController();
   final emailControll = TextEditingController();
   final cargoControll = TextEditingController();
