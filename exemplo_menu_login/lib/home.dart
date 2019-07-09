@@ -1,16 +1,17 @@
-import 'package:exemplo_menu_login/Utils/Cadastro.dart';
+
+import 'package:exemplo_menu_login/Utils/Login.dart';
 import 'package:exemplo_menu_login/main.dart';
 import 'package:flutter/material.dart';
 
 class Detalhe extends StatefulWidget {
-  Cadastrar cadastro;
+  Login cadastro;
   Detalhe(this.cadastro);
   @override
   _DetalheState createState() => _DetalheState(cadastro);
 }
 
 class _DetalheState extends State<Detalhe> {
-  Cadastrar cadastro;
+  Login cadastro;
   _DetalheState(this.cadastro);
   @override
   Widget build(BuildContext context) {

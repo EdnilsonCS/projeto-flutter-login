@@ -1,4 +1,4 @@
-import 'package:exemplo_menu_login/Utils/Cadastro.dart';
+import 'package:exemplo_menu_login/Utils/Login.dart';
 import 'package:exemplo_menu_login/home.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       final snackBar = SnackBar(content: Text('Autenticado com sucesso'));
       _scaffoldKey.currentState.showSnackBar(snackBar);
 
-      Cadastrar cadastro = new Cadastrar(
+      Login cadastro = new Login(
         email: emailControll.text,
       );
 
