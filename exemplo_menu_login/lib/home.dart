@@ -109,8 +109,6 @@ class _DetalheState extends State<Detalhe> {
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => MyApp()));
-                //Navigator.push(
-                //    context, MaterialPageRoute(builder: (context) => MyApp()));
               },
               child: Text(
                 "Sair",

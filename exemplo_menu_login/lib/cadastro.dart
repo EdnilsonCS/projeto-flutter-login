@@ -1,6 +1,6 @@
 import 'package:exemplo_menu_login/Utils/CadastrarDetalhe.dart';
 import 'package:flutter/material.dart';
-
+import 'package:exemplo_menu_login/home.dart';
 
 class Cadastro extends StatefulWidget {
   @override
@@ -99,13 +99,14 @@ class _CadastroState extends State<Cadastro> {
                     email: emailControll.text,
                     cargo: cargoControll.text,
                     detalhe: detalheControll.text);
-
-                //   Navigator.pushReplacement(
-                //       context,
-                //       MaterialPageRoute(
-                //           builder: (context) => Detalhe(cadastro),
-                //           settings: RouteSettings(arguments: cadastro)));
-                //
+                 
+                
+                    
+                 Navigator.pushReplacement(
+                      context,
+                       MaterialPageRoute(
+                          builder: (context) => Detalhe(cadastro),
+                          settings: RouteSettings(arguments: cadastro)));
               },
               child: Text(
                 "Realizar Cadastro",
