@@ -1,4 +1,3 @@
-
 import 'package:exemplo_menu_login/Utils/Cadastro.dart';
 import 'package:exemplo_menu_login/main.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,71 @@ class _DetalheState extends State<Detalhe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text(
+                'My UFs',
+                style: TextStyle(fontSize: 40, color: Colors.grey),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('Início'),
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey,
+                size: 30.0,
+              ),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: Text('Lista de Funcionarios'),
+              leading: Icon(
+                Icons.list,
+                color: Colors.grey,
+                size: 30.0,
+              ),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: Text('Realizar Cadastro'),
+              leading: Icon(
+                Icons.playlist_add,
+                color: Colors.grey,
+                size: 30.0,
+              ),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: Text('Sair'),
+              leading: Icon(
+                Icons.exit_to_app,
+                color: Colors.grey,
+                size: 30.0,
+              ),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -28,30 +91,21 @@ class _DetalheState extends State<Detalhe> {
         // in the middle of the parent.
         child: Column(
           children: <Widget>[
-             CircleAvatar( backgroundImage: ExactAssetImage('assets/images/ImgTeste.jpg'),
-             ),
-            
+            CircleAvatar(
+              backgroundImage: ExactAssetImage('assets/images/ImgTeste.jpg'),
+              radius: 100,
+            ),
             Text(
-              "Usuario: ${cadastro.email}",
+              "Seja Bem Vindo, ${cadastro.email}",
               style: TextStyle(fontSize: 20, color: Colors.black),
             ),
-            
-            ExpansionTile(
-              title: Text('Mais Detalhes:'),
-              children: <Widget>[
-                Text(
-                  "" + cadastro.email,
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
-                )
-              ],
-            ), 
-         
             OutlineButton(
               color: Colors.blue,
               // textColor: Colors.white,
               disabledTextColor: Colors.black,
               onPressed: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context) => MyApp()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => MyApp()));
                 //Navigator.push(
                 //    context, MaterialPageRoute(builder: (context) => MyApp()));
               },
