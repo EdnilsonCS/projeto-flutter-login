@@ -3,16 +3,16 @@ import 'package:exemplo_menu_login/cadastro.dart';
 import 'package:exemplo_menu_login/main.dart';
 import 'package:flutter/material.dart';
 
-class Detalhe extends StatefulWidget {
+class Home extends StatefulWidget {
   Login cadastro;
-  Detalhe(this.cadastro);
+  Home({this.cadastro});
   @override
-  _DetalheState createState() => _DetalheState(cadastro);
+  _HomeState createState() => _HomeState(cadastro: cadastro);
 }
 
-class _DetalheState extends State<Detalhe> {
+class _HomeState extends State<Home> {
   Login cadastro;
-  _DetalheState(this.cadastro);
+  _HomeState({this.cadastro});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +86,7 @@ class _DetalheState extends State<Detalhe> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text("Detalhes"),
+        title: Text("Homes"),
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -99,7 +99,7 @@ class _DetalheState extends State<Detalhe> {
               radius: 100,
             ),
             Text(
-              "Seja Bem Vindo, ${cadastro.email}",
+              "Seja Bem Vindo, ${cadastro?.email}",
               style: TextStyle(fontSize: 20, color: Colors.black),
             ),
             OutlineButton(

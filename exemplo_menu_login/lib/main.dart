@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (context) => Detalhe(cadastro),
+              builder: (context) => Home(cadastro:cadastro),
               settings: RouteSettings(arguments: cadastro)));
     } else {
       final snackBar = SnackBar(content: Text('Erro na autenticação'));

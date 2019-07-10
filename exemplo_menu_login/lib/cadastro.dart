@@ -99,14 +99,12 @@ class _CadastroState extends State<Cadastro> {
                     email: emailControll.text,
                     cargo: cargoControll.text,
                     detalhe: detalheControll.text);
-                 
-                
-                    
-                 Navigator.pushReplacement(
-                      context,
-                       MaterialPageRoute(
-                          builder: (context) => Detalhe(cadastro),
-                          settings: RouteSettings(arguments: cadastro)));
+
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Home(),
+                    ));
               },
               child: Text(
                 "Realizar Cadastro",
