@@ -12,7 +12,7 @@ class _CadastroState extends State<Cadastro> {
   final emailControll = TextEditingController();
   final cargoControll = TextEditingController();
   final detalheControll = TextEditingController();
-
+  PageController _pageController;
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -24,6 +24,7 @@ class _CadastroState extends State<Cadastro> {
     return Scaffold(
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
+        controller: _pageController,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

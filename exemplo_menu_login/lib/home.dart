@@ -12,7 +12,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Login cadastro;
+  final _pageController = PageController();
   _HomeState({this.cadastro});
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
