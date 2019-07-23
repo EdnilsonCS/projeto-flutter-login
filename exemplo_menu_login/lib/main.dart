@@ -1,6 +1,11 @@
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
+import 'package:exemplo_menu_login/Api/autenticacao.dart';
 import 'package:exemplo_menu_login/Utils/Login.dart';
 import 'package:exemplo_menu_login/home.dart';
 import 'package:flutter/material.dart';
+import 'package:crypto/crypto.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,7 +51,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final emailControll = TextEditingController();
+  final usuarioControll = TextEditingController();
   final senhaControll = TextEditingController();
   final String email = "joao";
   final String senha = "1234";
@@ -57,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           TextField(
             decoration: InputDecoration(labelText: 'Login'),
-            controller: emailControll,
+            controller: usuarioControll,
             autocorrect: true,
           ),
           TextField(
@@ -75,25 +80,30 @@ class _MyHomePageState extends State<MyHomePage> {
       );
 
   onChange() async {
+    Dio dio = new Dio();
+    String login = usuarioControll.text;
+    String senha = senhaControll.text;
+    Autenticacao autenticacao = Autenticacao(login,senha);
     setState(() {
       retornoFuncao = CircularProgressIndicator();
     });
-    await Future.delayed(const Duration(seconds: 5));
     setState(() {
       retornoFuncao = _widgetPadrao();
     });
-    if (email == emailControll.text && senha == senhaControll.text) {
+    int codigo = await autenticacao.getStatus();
+
+    if (codigo == 200) {
       final snackBar = SnackBar(content: Text('Autenticado com sucesso'));
       _scaffoldKey.currentState.showSnackBar(snackBar);
 
       Login cadastro = new Login(
-        email: emailControll.text,
+        email: usuarioControll.text,
       );
 
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-              builder: (context) => Home(cadastro:cadastro),
+              builder: (context) => Home(cadastro: cadastro),
               settings: RouteSettings(arguments: cadastro)));
     } else {
       final snackBar = SnackBar(content: Text('Erro na autenticação'));
