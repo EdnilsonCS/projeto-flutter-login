@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:exemplo_menu_login/Api/autenticacao.dart';
-import 'package:exemplo_menu_login/Utils/Login.dart';
-import 'package:exemplo_menu_login/home.dart';
+import 'package:AppLogin/Api/autenticacao.dart';
+import 'package:AppLogin/Utils/login.dart';
+import 'package:AppLogin/home.dart';
 import 'package:flutter/material.dart';
 import 'package:crypto/crypto.dart';
 

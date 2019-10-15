@@ -1,6 +1,6 @@
-import 'package:exemplo_menu_login/Utils/Login.dart';
-import 'package:exemplo_menu_login/cadastro.dart';
-import 'package:exemplo_menu_login/main.dart';
+import 'package:AppLogin/Utils/login.dart';
+import 'package:AppLogin/cadastro.dart';
+import 'package:AppLogin/main.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {

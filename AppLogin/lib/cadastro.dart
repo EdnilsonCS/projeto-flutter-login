@@ -1,6 +1,6 @@
-import 'package:exemplo_menu_login/Utils/CadastrarDetalhe.dart';
+import 'package:AppLogin/Utils/cadastrarDetalhe.dart';
 import 'package:flutter/material.dart';
-import 'package:exemplo_menu_login/home.dart';
+import 'package:AppLogin/home.dart';
 
 class Cadastro extends StatefulWidget {
   @override
